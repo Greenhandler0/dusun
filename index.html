@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="id" data-theme="light" data-pal="profesional">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Dusun Maliyan · Portal Informasi Warga</title>
+<link rel="stylesheet" href="/style.css">
+</head>
+<body data-tab="ber">
+<main>
+<div class="top"><div><h1>Dusun Maliyan</h1><span class="sub">Portal Informasi Warga</span></div><div class="tbn"><button class="ab" id="tb">Tema</button><button class="ab" id="ab">Admin</button></div></div>
+<nav class="tabs"><button type="button" class="on" data-t="ber">Beranda</button><button type="button" data-t="gal">Galeri</button></nav>
+<div id="v-ber">
+<div class="hb"><img src="/maliyan.webp" alt="Ilustrasi Dusun Maliyan" width="1280" height="960" fetchpriority="high" decoding="async"></div>
+<div class="pg">Kategori Dokumentasi</div>
+<div id="bc"></div>
+</div>
+
+<div id="v-gal" style="display:none">
+<div class="pg" style="margin-top:2px">Galeri Kegiatan</div>
+<p class="tx">Foto dan video kegiatan Dusun Maliyan. Urutan ditampilkan secara acak pada setiap kategori.</p>
+<div id="gcf" class="chs"></div>
+<div id="gh" class="gh" style="display:none"><div id="ghm"></div><div class="ghc"><span id="ght"></span><button type="button" id="ghs">▶ Slideshow acak</button></div></div>
+<div class="gbar"><button type="button" id="ga">Acak ulang</button><button type="button" id="gs2">▶ Slideshow acak</button><button type="button" id="gx" style="display:none">Unggah</button></div>
+<div class="gup" id="gup" style="display:none"><label style="margin-top:0">Kategori</label><select id="gc"></select><label>Foto / video</label><input type="file" id="gf" multiple accept="image/jpeg,image/png,image/webp,image/gif,video/mp4,video/webm"><label>Keterangan (opsional)</label><input id="gn" maxlength="120"><div class="bt"><button type="button" class="pr" id="gu">Unggah</button></div><p class="m">Foto otomatis dikecilkan hingga di bawah 100 KB. Video maksimal 20 MB.</p><p class="m" id="gm"></p></div>
+<div id="gg"><p class="m">Memuat galeri…</p></div>
+</div>
+<div id="v-lap">
+<div class="pg" style="margin-top:2px">Laporan Keuangan Sedekah Jum’at</div>
+<div class="lg"><div class="lc">
+<div class="hero"><small>Saldo kas</small><b id="sal"></b></div>
+<div class="row2"><div class="k ko"><small>Total keluar</small><b class="out" id="tout"></b></div><div class="k"><small>Total masuk</small><b class="in" id="tin"></b></div></div>
+<div class="row3" id="gs"></div>
+<div id="pt"></div>
+</div><div class="rc">
+<div id="list"></div>
+
+<details class="set" id="bk" style="display:none"><summary><span>Cadangan &amp; spreadsheet</span><span class="m">JSON · CSV</span></summary>
+<div class="det"><p class="m" style="margin:6px 0">CSV bisa dibuka di Google Sheets atau Excel. JSON untuk cadangan dan impor kembali.</p>
+<div class="bt"><button type="button" id="ej">Ekspor JSON</button><button type="button" id="ec">Ekspor CSV</button></div>
+<div class="bt"><button type="button" id="ij">Impor JSON</button></div>
+<input type="file" id="fi" accept=".json,application/json" hidden>
+<p class="m" id="bm"></p></div></details>
+<details class="set" id="set" style="display:none"><summary><span>Pengaturan</span><span class="m">nama kelompok, saldo awal</span></summary>
+<div class="det">
+<label>Nama kelompok 1<input id="n1"></label>
+<label>Nama kelompok 2<input id="n2"></label>
+<label>Saldo awal sebelum catatan pertama (Rp)<input id="sa" type="number" inputmode="numeric"></label>
+<p class="m" style="margin:10px 0 0">Kata sandi admin diatur di Cloudflare (variabel ADMIN_PASSWORD).</p>
+<div class="bt"><button class="pr" id="ss">Simpan</button><button class="dl" id="rs">Data awal</button></div>
+</div></details>
+</div></div>
+</div>
+<section id="v-info"></section>
+<section id="v-tent"><div class="pg">Tentang Situs</div>
+<p class="tx">Situs ini disediakan khusus sebagai sarana informasi seputar Dusun Maliyan.</p></section>
+<footer class="ft"><span>Dusun Maliyan</span><span>Portal Informasi Warga</span></footer>
+</main>
+<button class="fab" id="add" style="display:none">+ Catat</button>
+
+<dialog id="gv"><div id="gvm"></div><p class="m" id="gvc" style="margin:8px 0 0"></p><div class="bt"><button type="button" id="gvd" class="dl">Hapus</button><button type="button" id="gvx" class="pr">Tutup</button></div></dialog>
+<dialog id="sw"><div id="swm"></div><div class="swc"><span id="swt"></span><button type="button" id="swn">Berikutnya ›</button><button type="button" id="swx">✕ Tutup</button></div></dialog>
+<dialog id="th"><h3>Tema</h3><label>Mode</label><div class="chips" id="cm"><button type="button" data-m="light">Terang</button><button type="button" data-m="dark">Gelap</button></div><label>Warna / gaya</label><div class="chips" id="cp"><button type="button" data-p="profesional"><i style="background:linear-gradient(135deg,#1e3a8a,#2563eb)"></i>Profesional</button><button type="button" data-p="teal"><i style="background:#0e5e6f"></i>Teal</button><button type="button" data-p="memphis"><i style="background:linear-gradient(135deg,#ff3ea5 33%,#ffd400 33% 66%,#00c2d1 66%)"></i>Retro</button></div><div class="bt"><button type="button" class="pr" id="tc">Selesai</button></div></dialog>
+<dialog id="cf"><p id="ct" style="margin:0 0 4px"></p><div class="bt"><button type="button" id="cn">Batal</button><button type="button" class="pr" id="cy">Ya</button></div></dialog>
+<dialog id="dg"><form id="f" method="dialog">
+<h3 id="ft">Catat Jum’at</h3>
+<label>Tanggal<input type="date" id="d" required></label>
+<label id="l1" style="color:var(--g1);font-weight:600">Kelompok 1</label>
+<div class="g"><input id="p1" placeholder="Nama petugas"><input id="j1" type="number" inputmode="numeric" placeholder="Jumlah Rp"></div>
+<label class="cb"><input type="checkbox" id="x1">Bolos (tidak mengambil)</label>
+<label id="l2" style="color:var(--g2);font-weight:600">Kelompok 2</label>
+<div class="g"><input id="p2" placeholder="Nama petugas"><input id="j2" type="number" inputmode="numeric" placeholder="Jumlah Rp"></div>
+<label class="cb"><input type="checkbox" id="x2">Bolos (tidak mengambil)</label>
+<label>Total pemasukan (Rp)<input id="t" type="number" inputmode="numeric" placeholder="0"></label>
+<label>Pemasukan lain (Rp)<input id="l" type="number" inputmode="numeric" placeholder="0"></label>
+<label>Keterangan pemasukan lain<input id="lk" placeholder="mis. donasi, infaq, hibah"></label>
+<label>Pengeluaran (Rp)<input id="o" type="number" inputmode="numeric" placeholder="0"></label>
+<label>Keterangan pengeluaran<input id="k"></label>
+<div class="bt"><button type="button" id="cx">Batal</button><button type="button" class="dl" id="dx">Hapus</button><button type="submit" class="pr">Simpan</button></div>
+</form></dialog>
+
+<div id="sv" class="sv"></div>
+<script src="/app.js"></script>
+</body>
+</html>
